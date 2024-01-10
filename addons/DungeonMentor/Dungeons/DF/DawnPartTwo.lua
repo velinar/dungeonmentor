@@ -1,0 +1,506 @@
+local DAWN_TWO_AREA_COUNT = 6;
+local DAWN_TWO_MAP_AREAS = {
+    ["area#0"] = {
+        areaIndex = 0,
+        name = "Uncategorized",
+        locationHint = "TBD",
+        floorIndex = 1
+    },
+    ["area#1"] = {
+        areaIndex = 1,
+        name = "Infinite Conflux",
+        locationHint = "TBD",
+        floorIndex = 1
+    },
+    ["area#2"] = {
+        areaIndex = 2,
+        name = "Millennia's Threshold",
+        locationHint = "TBD",
+        floorIndex = 2
+    },
+    ["area#3"] = {
+        areaIndex = 3,
+        name = "Immemorial Battlefield",
+        locationHint = "TBD",
+        floorIndex = 3
+    },
+    ["area#4"] = {
+        areaIndex = 4,
+        name = "Twisting Approach",
+        locationHint = "TBD",
+        floorIndex = 4
+    },
+    ["area#5"] = {
+        areaIndex = 5,
+        name = "Crossroads of Fate",
+        locationHint = "TBD",
+        floorIndex = 5
+    },
+}
+
+local DAWN_TWO_NPCS = {
+    size = 33,
+    items = {
+        [1] = {
+            ["npcid"] = 199748,
+            ["name"] = "Timeline Marauder",
+            ["type"] = "",
+            ["forceCount"] = 5,
+            ["count"] = 0,
+        },
+        [2] = {
+            ["npcid"] = 201222,
+            ["name"] = "Valow, Timesworn Keeper",
+            ["type"] = "",
+            ["forceCount"] = 20,
+            ["count"] = 0,
+        },
+        [3] = {
+            ["npcid"] = 201223,
+            ["name"] = "Infinite Twilight Magus",
+            ["type"] = "",
+            ["forceCount"] = 5,
+            ["count"] = 0,
+        },
+        [4] = {
+            ["npcid"] = 205151,
+            ["name"] = "Tyr's Vanguard",
+            ["type"] = "",
+            ["forceCount"] = 5,
+            ["count"] = 0,
+            ["autocompleteAfter"] = 1,
+            ["allowGuidReassign"] = true,
+        },
+        [5] = {
+            ["npcid"] = 205152,
+            ["name"] = "Lerai, Timesworn Maiden",
+            ["type"] = "",
+            ["forceCount"] = 20,
+            ["count"] = 0,
+        },
+        [6] = {
+            ["npcid"] = 205158,
+            ["name"] = "Spurlok, Timesworn Sentinel",
+            ["type"] = "",
+            ["forceCount"] = 20,
+            ["count"] = 0,
+        },
+        [7] = {
+            ["npcid"] = 207177,
+            ["name"] = "Infinite Watchkeeper",
+            ["type"] = "",
+            ["forceCount"] = 15,
+            ["count"] = 0,
+        },
+        [8] = {
+            ["npcid"] = 198998,
+            ["name"] = "Tyr, the Infinite Keeper",
+            ["type"] = "",
+            ["forceCount"] = 0,
+            ["count"] = 0,
+        },
+        [9] = {
+            ["npcid"] = 199749,
+            ["name"] = "Timestream Anomaly",
+            ["type"] = "",
+            ["forceCount"] = 12,
+            ["count"] = 0,
+        },
+        [10] = {
+            ["npcid"] = 206068,
+            ["name"] = "Temporal Fusion",
+            ["type"] = "",
+            ["forceCount"] = 2,
+            ["count"] = 0,
+        },
+        [11] = {
+            ["npcid"] = 208698,
+            ["name"] = "Infinite Riftmage",
+            ["type"] = "",
+            ["forceCount"] = 5,
+            ["count"] = 0,
+        },
+        [12] = {
+            ["npcid"] = 206230,
+            ["name"] = "Infinite Diversionist",
+            ["type"] = "",
+            ["forceCount"] = 15,
+            ["count"] = 0,
+        },
+        [13] = {
+            ["npcid"] = 208438,
+            ["name"] = "Infinite Saboteur",
+            ["type"] = "",
+            ["forceCount"] = 15,
+            ["count"] = 0,
+        },
+        [14] = {
+            ["npcid"] = 206074,
+            ["name"] = "Pendule",
+            ["type"] = "",
+            ["forceCount"] = 3,
+            ["count"] = 0,
+        },
+        [15] = {
+            ["npcid"] = 206070,
+            ["name"] = "Chronaxie",
+            ["type"] = "",
+            ["forceCount"] = 6,
+            ["count"] = 0,
+        },
+        [16] = {
+            ["npcid"] = 208165,
+            ["name"] = "Alliance Knight",
+            ["type"] = "",
+            ["forceCount"] = 5,
+            ["count"] = 0,
+            ["autocompleteAfter"] = 3,
+            ["allowGuidReassign"] = true,
+        },
+        [17] = {
+            ["npcid"] = 208193,
+            ["name"] = "Paladin of the Silver Hand",
+            ["type"] = "",
+            ["forceCount"] = 8,
+            ["count"] = 0,
+            ["autocompleteAfter"] = 3,
+            ["allowGuidReassign"] = true,
+        },
+        [18] = {
+            ["npcid"] = 208208,
+            ["name"] = "Alliance Destroyer",
+            ["type"] = "",
+            ["forceCount"] = 25,
+            ["count"] = 0,
+        },
+        [19] = {
+            ["npcid"] = 203679,
+            ["name"] = "Anduin Lothar",
+            ["type"] = "",
+            ["forceCount"] = 0,
+            ["count"] = 0,
+            ["autocompleteAfter"] = 3,
+            ["allowGuidReassign"] = true,
+        },
+        [20] = {
+            ["npcid"] = 205337,
+            ["name"] = "Infinite Timebender",
+            ["type"] = "",
+            ["forceCount"] = 8,
+            ["count"] = 0,
+        },
+        [21] = {
+            ["npcid"] = 205363,
+            ["name"] = "Time-Lost Waveshaper",
+            ["type"] = "",
+            ["forceCount"] = 4,
+            ["count"] = 0,
+        },
+        [22] = {
+            ["npcid"] = 205365,
+            ["name"] = "Time-Lost Tidehunter",
+            ["type"] = "",
+            ["forceCount"] = 4,
+            ["count"] = 0,
+        },
+        [23] = {
+            ["npcid"] = 205366,
+            ["name"] = "Time-Lost Wakethrasher",
+            ["type"] = "",
+            ["forceCount"] = 1,
+            ["count"] = 0,
+        },
+        [24] = {
+            ["npcid"] = 205723,
+            ["name"] = "Time-Lost Aerobot",
+            ["type"] = "",
+            ["forceCount"] = 4,
+            ["count"] = 0,
+        },
+        [25] = {
+            ["npcid"] = 205727,
+            ["name"] = "Time-Lost Rocketeer",
+            ["type"] = "",
+            ["forceCount"] = 4,
+            ["count"] = 0,
+        },
+        [26] = {
+            ["npcid"] = 205790,
+            ["name"] = "Time-Lost Smack-o-Tron",
+            ["type"] = "",
+            ["forceCount"] = 1,
+            ["count"] = 0,
+        },
+        [27] = {
+            ["npcid"] = 198999,
+            ["name"] = "Morchie",
+            ["type"] = "",
+            ["forceCount"] = 0,
+            ["count"] = 0,
+            ["autocompleteAfter"] = 2,
+            ["allowGuidReassign"] = true,
+        },
+        [28] = {
+            ["npcid"] = 208440,
+            ["name"] = "Infinite Slayer",
+            ["type"] = "",
+            ["forceCount"] = 0,
+            ["count"] = 0,
+        },
+        [29] = {
+            ["npcid"] = 199000,
+            ["name"] = "Chrono-Lord Deios",
+            ["type"] = "",
+            ["forceCount"] = 0,
+            ["count"] = 0,
+            ["autocompleteAfter"] = 4,
+            ["allowGuidReassign"] = true,
+        },
+        [30] = {
+            ["npcid"] = 203678,
+            ["name"] = "Grommash Hellscream",
+            ["type"] = "",
+            ["forceCount"] = 0,
+            ["count"] = 0,
+            ["autocompleteAfter"] = 3,
+            ["allowGuidReassign"] = true,
+        },
+        [31] = {
+            ["npcid"] = 204206,
+            ["name"] = "Horde Farseer",
+            ["type"] = "",
+            ["forceCount"] = 8,
+            ["count"] = 0,
+            ["autocompleteAfter"] = 3,
+            ["allowGuidReassign"] = true,
+        },
+        [32] = {
+            ["npcid"] = 207969,
+            ["name"] = "Horde Raider",
+            ["type"] = "",
+            ["forceCount"] = 5,
+            ["count"] = 0,
+            ["autocompleteAfter"] = 3,
+            ["allowGuidReassign"] = true,
+        },
+        [33] = {
+            ["npcid"] = 203861,
+            ["name"] = "Horde Destroyer",
+            ["type"] = "",
+            ["forceCount"] = 25,
+            ["count"] = 0,
+        },
+    }
+}
+
+DAWN_TWO_INDEX_MAP = {
+    TIMELINE_MARAUDER_199748 = 1,
+    [199748] = 1,
+    VALOW_TIMESWORN_KEEPER_201222 = 2,
+    [201222] = 2,
+    INFINITE_TWILIGHT_MAGUS_201223 = 3,
+    [201223] = 3,
+    TYRS_VANGUARD_205151 = 4,
+    [205151] = 4,
+    LERAI_TIMESWORN_MAIDEN_205152 = 5,
+    [205152] = 5,
+    SPURLOK_TIMESWORN_SENTINEL_205158 = 6,
+    [205158] = 6,
+    INFINITE_WATCHKEEPER_207177 = 7,
+    [207177] = 7,
+    TYR_THE_INFINITE_KEEPER_198998 = 8,
+    [198998] = 8,
+    TIMESTREAM_ANOMALY_199749 = 9,
+    [199749] = 9,
+    TEMPORAL_FUSION_206068 = 10,
+    [206068] = 10,
+    INFINITE_RIFTMAGE_208698 = 11,
+    [208698] = 11,
+    INFINITE_DIVERSIONIST_206230 = 12,
+    [206230] = 12,
+    INFINITE_SABOTEUR_208438 = 13,
+    [208438] = 13,
+    PENDULE_206074 = 14,
+    [206074] = 14,
+    CHRONAXIE_206070 = 15,
+    [206070] = 15,
+    ALLIANCE_KNIGHT_208165 = 16,
+    [208165] = 16,
+    PALADIN_OF_THE_SILVER_HAND_208193 = 17,
+    [208193] = 17,
+    ALLIANCE_DESTROYER_208208 = 18,
+    [208208] = 18,
+    ANDUIN_LOTHAR_203679 = 19,
+    [203679] = 19,
+    INFINITE_TIMEBENDER_205337 = 20,
+    [205337] = 20,
+    TIMELOST_WAVESHAPER_205363 = 21,
+    [205363] = 21,
+    TIMELOST_TIDEHUNTER_205365 = 22,
+    [205365] = 22,
+    TIMELOST_WAKETHRASHER_205366 = 23,
+    [205366] = 23,
+    TIMELOST_AEROBOT_205723 = 24,
+    [205723] = 24,
+    TIMELOST_ROCKETEER_205727 = 25,
+    [205727] = 25,
+    TIMELOST_SMACKOTRON_205790 = 26,
+    [205790] = 26,
+    MORCHIE_198999 = 27,
+    [198999] = 27,
+    INFINITE_SLAYER_208440 = 28,
+    [208440] = 28,
+    CHRONOLORD_DEIOS_199000 = 29,
+    [199000] = 29,
+    GROMMASH_HELLSCREAM_203678 = 30,
+    [203678] = 30,
+    HORDE_FARSEER_204206 = 31,
+    [204206] = 31,
+    HORDE_RAIDER_207969 = 32,
+    [207969] = 32,
+    HORDE_DESTROYER_203861 = 33,
+    [203861] = 33,
+}
+
+local DAWN_TWO_MAP_MARKERS = {
+    areas = {
+        ["area#0"] = {
+            pullGroups = {
+            },
+        },
+        ["area#1"] = {
+            pullGroups = {
+                ["A"] = {metadata={position={x=348,y=413}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.TYRS_VANGUARD_205151] = 2,}},
+                ["B"] = {metadata={position={x=419,y=392}, uniqueMobs=2}, mobs={[DAWN_TWO_INDEX_MAP.INFINITE_TWILIGHT_MAGUS_201223] = 1, [DAWN_TWO_INDEX_MAP.TYRS_VANGUARD_205151] = 2,}},
+                ["C"] = {metadata={position={x=453,y=394}, uniqueMobs=3}, mobs={[DAWN_TWO_INDEX_MAP.VALOW_TIMESWORN_KEEPER_201222] = 1, [DAWN_TWO_INDEX_MAP.TYRS_VANGUARD_205151] = 1, [DAWN_TWO_INDEX_MAP.INFINITE_TWILIGHT_MAGUS_201223] = 1,}},
+                ["D"] = {metadata={position={x=489,y=394}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.TYRS_VANGUARD_205151] = 1,}},
+                ["E"] = {metadata={position={x=520,y=355}, uniqueMobs=3}, mobs={[DAWN_TWO_INDEX_MAP.LERAI_TIMESWORN_MAIDEN_205152] = 1, [DAWN_TWO_INDEX_MAP.TYRS_VANGUARD_205151] = 1, [DAWN_TWO_INDEX_MAP.INFINITE_TWILIGHT_MAGUS_201223] = 1,}},
+                ["F"] = {metadata={position={x=494,y=293}, uniqueMobs=2}, mobs={[DAWN_TWO_INDEX_MAP.TYRS_VANGUARD_205151] = 1, [DAWN_TWO_INDEX_MAP.INFINITE_TWILIGHT_MAGUS_201223] = 2,}},
+                ["G"] = {metadata={position={x=447,y=293}, uniqueMobs=2}, mobs={[DAWN_TWO_INDEX_MAP.SPURLOK_TIMESWORN_SENTINEL_205158] = 1, [DAWN_TWO_INDEX_MAP.INFINITE_TWILIGHT_MAGUS_201223] = 2,}},
+                ["H"] = {metadata={position={x=410,y=320}, uniqueMobs=2}, mobs={[DAWN_TWO_INDEX_MAP.TYRS_VANGUARD_205151] = 1, [DAWN_TWO_INDEX_MAP.INFINITE_TWILIGHT_MAGUS_201223] = 1,}},
+                ["I"] = {metadata={position={x=405,y=353}, uniqueMobs=2}, mobs={[DAWN_TWO_INDEX_MAP.TYRS_VANGUARD_205151] = 2, [DAWN_TWO_INDEX_MAP.INFINITE_TWILIGHT_MAGUS_201223] = 2,}},
+                ["J"] = {metadata={position={x=527,y=391}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.TYR_THE_INFINITE_KEEPER_198998] = 1,}},
+                ["K"] = {metadata={position={x=645,y=559}, uniqueMobs=2}, mobs={[DAWN_TWO_INDEX_MAP.INFINITE_WATCHKEEPER_207177] = 1, [DAWN_TWO_INDEX_MAP.TIMELINE_MARAUDER_199748] = 1,}},
+                ["L"] = {metadata={position={x=568,y=225}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.TYRS_VANGUARD_205151] = 3,}},
+                ["M"] = {metadata={position={x=550,y=198}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.INFINITE_TWILIGHT_MAGUS_201223] = 1,}},
+                ["N"] = {metadata={position={x=614,y=133}, uniqueMobs=2}, mobs={[DAWN_TWO_INDEX_MAP.INFINITE_TWILIGHT_MAGUS_201223] = 1, [DAWN_TWO_INDEX_MAP.TYRS_VANGUARD_205151] = 2,}},
+                ["O"] = {metadata={position={x=522,y=144}, uniqueMobs=2}, mobs={[DAWN_TWO_INDEX_MAP.INFINITE_TWILIGHT_MAGUS_201223] = 1, [DAWN_TWO_INDEX_MAP.TYRS_VANGUARD_205151] = 2,}},
+                ["P"] = {metadata={position={x=550,y=117}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.TYRS_VANGUARD_205151] = 1,}},
+                ["Q"] = {metadata={position={x=580,y=138}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.TYRS_VANGUARD_205151] = 1,}},
+            },
+        },
+        ["area#2"] = {
+            pullGroups = {
+                ["A"] = {metadata={position={x=601,y=400}, uniqueMobs=2}, mobs={[DAWN_TWO_INDEX_MAP.INFINITE_DIVERSIONIST_206230] = 1, [DAWN_TWO_INDEX_MAP.INFINITE_SABOTEUR_208438] = 1,}},
+                ["B"] = {metadata={position={x=718,y=298}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.TEMPORAL_FUSION_206068] = 1,}},
+                ["C"] = {metadata={position={x=694,y=322}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.TEMPORAL_FUSION_206068] = 1,}},
+                ["D"] = {metadata={position={x=724,y=349}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.TEMPORAL_FUSION_206068] = 1,}},
+                ["E"] = {metadata={position={x=693,y=406}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.TEMPORAL_FUSION_206068] = 1,}},
+                ["F"] = {metadata={position={x=718,y=411}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.TIMESTREAM_ANOMALY_199749] = 1,}},
+                ["G"] = {metadata={position={x=663,y=421}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.TEMPORAL_FUSION_206068] = 1,}},
+                ["H"] = {metadata={position={x=683,y=449}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.TEMPORAL_FUSION_206068] = 1,}},
+                ["I"] = {metadata={position={x=710,y=440}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.INFINITE_RIFTMAGE_208698] = 1,}},
+                ["J"] = {metadata={position={x=687,y=504}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.TEMPORAL_FUSION_206068] = 1,}},
+                ["K"] = {metadata={position={x=715,y=483}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.TEMPORAL_FUSION_206068] = 1,}},
+                ["L"] = {metadata={position={x=737,y=561}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.TEMPORAL_FUSION_206068] = 1,}},
+                ["M"] = {metadata={position={x=763,y=543}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.TEMPORAL_FUSION_206068] = 1,}},
+                ["N"] = {metadata={position={x=779,y=511}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.TEMPORAL_FUSION_206068] = 1,}},
+                ["O"] = {metadata={position={x=795,y=531}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.INFINITE_RIFTMAGE_208698] = 1,}},
+                ["P"] = {metadata={position={x=812,y=561}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.TEMPORAL_FUSION_206068] = 1,}},
+                ["Q"] = {metadata={position={x=833,y=476}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.TEMPORAL_FUSION_206068] = 1,}},
+                ["R"] = {metadata={position={x=839,y=440}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.TEMPORAL_FUSION_206068] = 1,}},
+                ["S"] = {metadata={position={x=892,y=439}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.TEMPORAL_FUSION_206068] = 1,}},
+                ["T"] = {metadata={position={x=855,y=332}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.TEMPORAL_FUSION_206068] = 1,}},
+                ["U"] = {metadata={position={x=873,y=363}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.TEMPORAL_FUSION_206068] = 1,}},
+                ["V"] = {metadata={position={x=857,y=389}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.INFINITE_RIFTMAGE_208698] = 1,}},
+                ["W"] = {metadata={position={x=825,y=392}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.TEMPORAL_FUSION_206068] = 1,}},
+                ["X"] = {metadata={position={x=812,y=363}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.INFINITE_RIFTMAGE_208698] = 1,}},
+                ["Y"] = {metadata={position={x=757,y=402}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.TEMPORAL_FUSION_206068] = 1,}},
+                ["Z"] = {metadata={position={x=757,y=429}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.TIMESTREAM_ANOMALY_199749] = 1,}},
+            },
+        },
+        ["area#3"] = {
+            pullGroups = {
+                ["A"] = {metadata={position={x=373,y=395}, uniqueMobs=2}, mobs={[DAWN_TWO_INDEX_MAP.PENDULE_206074] = 2, [DAWN_TWO_INDEX_MAP.CHRONAXIE_206070] = 1,}},
+                ["B"] = {metadata={position={x=561,y=348}, uniqueMobs=0}, mobs={}, mutexMobs={size=1,items={[1]={display="Alliance/Horde Destroyer",option1=DAWN_TWO_INDEX_MAP.ALLIANCE_DESTROYER_208208,option2=DAWN_TWO_INDEX_MAP.HORDE_DESTROYER_203861},}}},
+                ["C"] = {metadata={position={x=590,y=359}, uniqueMobs=0}, mobs={}, mutexMobs={size=3,items={[1]={display="Paladin of the Silver Hand/Horde Farseer",option1=DAWN_TWO_INDEX_MAP.PALADIN_OF_THE_SILVER_HAND_208193,option2=DAWN_TWO_INDEX_MAP.HORDE_FARSEER_204206},[2]={display="Alliace Knight / Horde Raider",option1=DAWN_TWO_INDEX_MAP.ALLIANCE_KNIGHT_208165,option2=DAWN_TWO_INDEX_MAP.HORDE_RAIDER_207969},[3]={display="Alliance Knight / Horde Raider",option1=DAWN_TWO_INDEX_MAP.ALLIANCE_KNIGHT_208165,option2=DAWN_TWO_INDEX_MAP.HORDE_RAIDER_207969},}}},
+                ["D"] = {metadata={position={x=558,y=376}, uniqueMobs=0}, mobs={}, mutexMobs={size=1,items={[1]={display="Anduin / Grommash",option1=DAWN_TWO_INDEX_MAP.ANDUIN_LOTHAR_203679,option2=DAWN_TWO_INDEX_MAP.GROMMASH_HELLSCREAM_203678},}}},
+                ["E"] = {metadata={position={x=697,y=570}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.PENDULE_206074] = 3,}},
+                ["F"] = {metadata={position={x=762,y=579}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.PENDULE_206074] = 3,}},
+                ["G"] = {metadata={position={x=825,y=568}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.PENDULE_206074] = 3,}},
+            },
+        },
+        ["area#4"] = {
+            pullGroups = {
+                ["A"] = {metadata={position={x=539,y=237}, uniqueMobs=4}, mobs={[DAWN_TWO_INDEX_MAP.INFINITE_TIMEBENDER_205337] = 1, [DAWN_TWO_INDEX_MAP.TIMELOST_SMACKOTRON_205790] = 3, [DAWN_TWO_INDEX_MAP.TIMELOST_ROCKETEER_205727] = 1, [DAWN_TWO_INDEX_MAP.TIMELOST_AEROBOT_205723] = 1,}},
+                ["B"] = {metadata={position={x=547,y=400}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.MORCHIE_198999] = 1,}},
+                ["C"] = {metadata={position={x=550,y=577}, uniqueMobs=4}, mobs={[DAWN_TWO_INDEX_MAP.INFINITE_TIMEBENDER_205337] = 1, [DAWN_TWO_INDEX_MAP.TIMELOST_WAVESHAPER_205363] = 1, [DAWN_TWO_INDEX_MAP.TIMELOST_WAKETHRASHER_205366] = 1, [DAWN_TWO_INDEX_MAP.TIMELOST_TIDEHUNTER_205365] = 1,}},
+            },
+        },
+        ["area#5"] = {
+            pullGroups = {
+                ["A"] = {metadata={position={x=345,y=423}, uniqueMobs=2}, mobs={[DAWN_TWO_INDEX_MAP.TIMELINE_MARAUDER_199748] = 2, [DAWN_TWO_INDEX_MAP.INFINITE_SLAYER_208440] = 1,}},
+                ["B"] = {metadata={position={x=487,y=591}, uniqueMobs=1}, mobs={[DAWN_TWO_INDEX_MAP.CHRONOLORD_DEIOS_199000] = 1,}},
+            },
+        },
+    }
+}
+
+local DAWN_TWO_TOTAL_FORCES = 442;
+
+local DAWN_TWO_PRIORITY_ABILITIES = {
+};
+
+-- scenario objectives:
+-- #1: tyr, the infinite keeper
+-- #2: morchie
+-- #3: time-lost battlefield
+-- #4: chrono-lord deios
+
+function DM_Dungeons_GetDawnPartTwoContext()
+   return {
+      name="Dawn of the Infinites: Murozond's Rise",
+      config = {
+         SOURCE_MAP_WIDTH = 1120,
+         SOURCE_MAP_HEIGHT = 743,
+         xOffset = 0,
+         yOffset = 4,
+         floorCount = 5,
+         floorMapInfo = {
+            -- floor order: F (infinite conflux)
+            --              B (millennia's theshhold)
+            --              H (immemorail battlefield)
+            --              G (twisting approach)
+            --              E (crossroads of fate)
+            [1] = {name="Infinite Conflux", mapFolder="dawnoftheinfinite", mapTilePrefix="dawnoftheinfinite_f"},
+            [2] = {name="Millennia's Threshold", mapFolder="dawnoftheinfinite", mapTilePrefix="dawnoftheinfinite_b"},
+            [3] = {name="Immemorial Battlefield", mapFolder="dawnoftheinfinite", mapTilePrefix="dawnoftheinfinite_h"},
+            [4] = {name="Twisting Approach", mapFolder="dawnoftheinfinite", mapTilePrefix="dawnoftheinfinite_g"},
+            [5] = {name="Crossroads of Fate", mapFolder="dawnoftheinfinite", mapTilePrefix="dawnoftheinfinite_e"},
+
+            --[1] = {name="Sanctum of Chronology", mapFolder="dawnoftheinfinite", mapTilePrefix="dawnoftheinfinite_a"},
+            --[3] = {name="Locus of Eternity", mapFolder="dawnoftheinfinite", mapTilePrefix="dawnoftheinfinite_c"},
+            --[4] = {name="Spoke of Endless Winter", mapFolder="dawnoftheinfinite", mapTilePrefix="dawnoftheinfinite_d"},
+            --[x] = {name="Immemorial Battlefield?", mapFolder="dawnoftheinfinite", mapTilePrefix="dawnoftheinfinite_f"},
+         }
+      },
+      zoneId=2579,
+      zoneDiscriminator = 2,
+      timer=35*60, -- 35:00
+      requiredForceCount=335,
+      totalForceCount=DAWN_TWO_TOTAL_FORCES,
+      totalMobGroups=0,
+      --mobGroups=DAWN_TWO_MOB_GROUPS,
+      areaCount=DAWN_TWO_AREA_COUNT,
+      areas=DAWN_TWO_MAP_AREAS,
+      mapMarkers=DAWN_TWO_MAP_MARKERS,
+      npcs=DAWN_TWO_NPCS,
+      --mobGroupPositions=DAWN_TWO_GROUP_POSITIONS,
+      mobIndexMap=DAWN_TWO_INDEX_MAP,
+      envMarkers=DAWN_TWO_POI,
+      abilities=DAWN_TWO_ABILITIES,
+      abilitiesByMob=DAWN_TWO_BY_MOB,
+      --neighbors=DAWN_TWO_GROUP_NEIGHBORS,
+      priorityAbilities=DAWN_TWO_PRIORITY_ABILITIES
+   };
+end

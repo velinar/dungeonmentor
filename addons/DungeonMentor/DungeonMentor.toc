@@ -1,0 +1,65 @@
+## Interface: 100200
+## Title: Dungeon Mentor
+## Notes: Your helpful guide to improve the M+ experience, including real time route display and group coordination
+## Author: Velinar (Area 52)
+## Version: 10.2.0.9 (20240109)
+## X-Website: https://dungeonmentor.io <coming soon>
+## X-Curse-Project-ID: 946988
+## SavedVariables: DM_GlobalOptions, DM_Routes, DM_Tracker_History, DM_GlobalDungeons
+## SavedVariablesPerCharacter: DM_Options
+
+# This loads the extra libraries. Objective is to keep additional libraries
+# used by this addon to an absolute minimum but some are too useful to not
+# take advantage.
+embeds.xml
+
+DungeonMentorColors.lua
+DungeonMentorGroup.lua
+DungeonMentorUtil.lua
+DungeonMentorTextures.lua
+DungeonMentorInfo.lua
+DungeonMentorRouteBuilder.lua
+DungeonMentorTrackers.lua
+DungeonMentorOptions.lua
+DungeonMentorCore.lua
+
+# Here we get into the specific dungeons. Might re-organize so everything is under a specific game version,
+# such as "Dungeons/10/..." since it's highly likely some of these dungeons will feature in a future xpac.
+# Alternative is to just change the data files for future seasons/xpacs since two versions of a dungeon's data
+# will never need to co-exist and let Git versioning retain the data history.
+#
+# We'll also comment out entire seasons that aren't active but leave all data in for the length of an xpac
+#
+# This exists as both a starter LUA file for new dungeons as well as an empty/null style data test
+Dungeons/NullDungeon.lua
+# The DM_Dungeons below handles loading a specific dungeon
+# DF Season 1
+#Dungeons/WoD/Shadowmoon.lua
+#Dungeons/DF/Algethar.lua
+#Dungeons/DF/AzureVault.lua
+#Dungeons/DF/RubyLifePools.lua
+#Dungeons/DF/NokhudOffensive.lua
+#Dungeons/Legion/CourtOfStars.lua
+#Dungeons/Legion/HallsOfValor.lua
+#Dungeons/MoP/Jade.lua
+#Dungeons/DF/Brackenhide.lua
+# DF Season 2
+#Dungeons/DF/Brackenhide.lua
+#Dungeons/DF/HallsOfInfusion.lua
+#Dungeons/DF/LegacyOfTyr.lua
+#Dungeons/DF/Neltharus.lua
+#Dungeons/Legion/NeltharionsLair.lua
+#Dungeons/Cataclysm/VortexPinnacle.lua
+#Dungeons/BFA/Freehold.lua
+#Dungeons/BFA/Underrot.lua
+# DF Season 3
+Dungeons/BFA/AtalDazar.lua
+Dungeons/Legion/BlackRook.lua
+Dungeons/Legion/Darkheart.lua
+Dungeons/DF/DawnPartOne.lua
+Dungeons/DF/DawnPartTwo.lua
+Dungeons/WoD/Everbloom.lua
+Dungeons/Cataclysm/ThroneOfTheTides.lua
+Dungeons/BFA/Waycrest.lua
+
+Dungeons/DM_Dungeons.lua

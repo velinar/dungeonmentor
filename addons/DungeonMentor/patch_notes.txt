@@ -1,0 +1,80 @@
+Version: 10.2.0.9 (2024-01-09)
+
+IMPROVEMENTS:
+- Rewrote all of my route builder code. This should be 100% transparent to everyone, but also why I'm pushing this as its own update, so if there are bugs they'll be limited to this code. The rewrite helps position addon for rest of improvements coming. Key improvements are around how the route data is stored and how the UI is kept in sync with its data state.
+
+Version: 10.2.0.8 (2023-12-23)
+
+BUG FIXES:
+- Addon communication: Version check didn't check whether unit is offline or not. It now does and chat errors should not occur any longer.
+- Route builder: several bug fixes around selections and changing dungeons/floors
+
+IMPROVEMENTS:
+- Route builder: added numbering of pull groups to the side list
+- Route builder: added toggle button on map to show/hide pull group order on the map
+- Route builder: when selecting a pull group in the side list, the corresponding map marker will now be outlined with a blue box
+- Route builder: if a pull group is selected, clicking on a marker not already in the route will add the pull group immediately beneath the selected group
+- Pull tracker: pull order moved to headers in the pull tracker instead of per-mob
+- Options: added an options indicator frame to Blizzard's Addons options frame
+
+Version: 10.2.0.7 (2023-12-19)
+
+BUG FIXES:
+- Route import was failing if the route builder had never been opened. Now route import will automatically
+  open the route builder and auto-select the just imported route.
+- The addon is a lot less chatty now. If players are offline or are not running Dungeon Mentor then they
+  will not receive messages from the addon.
+- Ready check code is closer to working smooth. For now ready check processing is limited to 
+  parties physically inside a dungeon instance.
+
+OTHER:
+- Addon is now starting with windows hidden. This brings it in line with addons like DBM and MDT. The
+  windows risk being annoying for those not actively running M+ content, such as questing on an alt,
+  but the addon is always summonable using "/vdm show"
+- Added a tooltip to the immediate action frame so if someone stumbles across this on their screen they understand what it is immediately.
+
+Version: 10.2.0.6 (2023-12-16)
+
+BUG FIXES:
+- Problem with route builder throwing off the two Dawn of the Infinites instances, this is fixed and both instances should
+  be fully operational in route builder and pull tracker now
+
+Version: 10.2.0.5 (2023-12-14)
+
+BUG FIXES:
+- Removed subtraction of death counter timeLost from elapsed time, based on
+  Blizzard code this is already built into the timer
+- Removed incorrect discord link from information window and directed
+  people to curseforge project site
+- Ready check code is broken in raids so disabled it if group is not a "party"
+- Altered default options to NOT automatically hide the Blizzard objective frame.
+  This has no effect for now but any new users installing addon I want the default
+  value false for now for when I re-enable hiding of this frame.
+
+Version: 10.2.0.4 (2023-12-13)
+   OTHER:
+   - Temporarily disabling hiding of the objective tracker frame at start of dungeon run. 
+     There's useful information here that isn't in DM yet and I want to make sure early users
+     aren't put off by this frame disappearing during dungeon runs.
+   - Blizard's objective tracker UI can still be hidden/shown using the following commands:
+     /vdm blizzard show
+     /vdm blizzard hide
+
+Version: 10.2.0.3 (2023-12-13)
+   BUG FIXES:
+   - Added death penalty into timer display and calculation code
+   
+   OTHER:
+   - Decreased size of marker textures by about 82% by swapping to PNG, further savings will be evaluated in future
+
+Version: 10.2.0.2 (2023-12-12)
+   BUG FIXES:
+      - Removed party chat notifications for eating/drinking, intention is for party chat to only occur when
+        player clicks the icons
+      - Fixed map marker error when clicking on a map marker that is already in the route (it would print an error message)
+
+   OTHER:
+      - Cleaned up the Info LUA file.
+
+Version: 10.2.0.1 (2023-12-11)
+   Initial Release
